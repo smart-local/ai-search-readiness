@@ -52,6 +52,14 @@ Score: 93/100
 
 The score counts each pass as 1, each warning as 0.5 and each fail as 0. Use it to compare pages, not as a ranking prediction.
 
+## Documentation
+
+- [Fixing your results](docs/fixing-results.md): what each line means and how to fix it
+- [AI crawlers and robots.txt](docs/ai-crawlers.md): the user agents checked, search vs training crawlers, example rules
+- [JSON output](docs/json-output.md): report format and checking many pages
+
+This tool covers the technical checks. For the full process (crawler access, matching business facts, source checks and a dated test log), see Smart Local's AI visibility checklist: https://smart-local.com.au/resources/ai-visibility-checklist/
+
 ## Tests
 
 ```bash

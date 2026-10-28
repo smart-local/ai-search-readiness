@@ -17,7 +17,7 @@ import urllib.parse
 import urllib.request
 from html.parser import HTMLParser
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 UA = "ai-search-readiness/%s (+https://github.com/smart-local/ai-search-readiness)" % __version__
 
 # Crawlers used by AI search and answer engines, grouped by vendor.
@@ -140,10 +140,11 @@ def types_of(node):
 
 
 def digits(s):
+    """Digits only, with the +61 country code and trunk 0 removed (AU numbers)."""
     d = re.sub(r"\D", "", s or "")
     if d.startswith("61"):
-        d = "0" + d[2:]
-    return d
+        d = d[2:]
+    return d.lstrip("0")
 
 
 def parse_robots(text):
