@@ -32,6 +32,10 @@ class SampleTest(unittest.TestCase):
     def test_missing_schema_props(self):
         self.assertEqual(self.by["Business schema"], ["warn"])
 
+    def test_phone_formats_match(self):
+        self.assertEqual(asr.digits("+611300305488"), asr.digits("1300 305 488"))
+        self.assertEqual(asr.digits("+61 7 5000 0000"), asr.digits("(07) 5000 0000"))
+
     def test_robots_parser(self):
         g = asr.parse_robots("User-agent: GPTBot\nDisallow: /\n\nUser-agent: *\nAllow: /\n")
         self.assertTrue(asr.robots_blocks_root(g, "GPTBot"))
