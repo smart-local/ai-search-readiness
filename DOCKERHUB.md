@@ -7,19 +7,19 @@ The tool is open source (MIT), rule-based and uses no AI model or API key. It's 
 ## Run it
 
 ```bash
-docker run --rm smartlocal/ai-search-readiness https://example.com.au/
+docker run --rm smartlocalau/ai-search-readiness https://example.com.au/
 ```
 
 To get JSON output, for CI or scripts:
 
 ```bash
-docker run --rm smartlocal/ai-search-readiness https://example.com.au/ --json
+docker run --rm smartlocalau/ai-search-readiness https://example.com.au/ --json
 ```
 
 To check a saved HTML file:
 
 ```bash
-docker run --rm -v "$PWD:/work:ro" smartlocal/ai-search-readiness --html /work/page.html --base https://example.com.au/
+docker run --rm -v "$PWD:/work:ro" smartlocalau/ai-search-readiness --html /work/page.html --base https://example.com.au/
 ```
 
 ## What it checks
