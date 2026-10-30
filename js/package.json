@@ -1,0 +1,17 @@
+{
+  "name": "ai-search-readiness",
+  "version": "0.1.0",
+  "description": "Check a local business web page for Google and AI search readiness: on-page tags, JSON-LD schema, NAP consistency and AI crawler access in robots.txt. Zero dependencies. By Smart Local.",
+  "keywords": ["seo", "local-seo", "ai-search", "geo", "llm", "schema-org", "json-ld", "robots-txt", "gptbot", "claudebot", "nap", "cli"],
+  "homepage": "https://smart-local.com.au/",
+  "bugs": { "url": "https://github.com/smart-local/ai-search-readiness/issues" },
+  "repository": { "type": "git", "url": "git+https://github.com/smart-local/ai-search-readiness.git", "directory": "js" },
+  "license": "MIT",
+  "author": { "name": "Smart Local", "email": "customercare@smart-local.com.au", "url": "https://smart-local.com.au/" },
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "bin": { "ai-search-readiness": "bin/ai-search-readiness.js" },
+  "files": ["lib", "bin"],
+  "engines": { "node": ">=18" },
+  "scripts": { "test": "node test/run.js" }
+}
