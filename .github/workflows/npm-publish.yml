@@ -1,0 +1,30 @@
+name: npm publish (js)
+
+on:
+  push:
+    tags: ["js-v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write # npm trusted publishing + provenance
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: js
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+      - run: npm install -g npm@latest
+      - run: npm test
+      - name: Publish
+        run: npm publish --provenance --access public
+        env:
+          # Only needed for the very first publish; afterwards use npm trusted publishing and delete the secret.
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
